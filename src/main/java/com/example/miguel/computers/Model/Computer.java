@@ -26,7 +26,7 @@ import java.util.List;
 
         @ManyToOne
         @JoinColumn(name = "categoryId")
-        @JsonIgnoreProperties("computer")
+        @JsonIgnoreProperties("computers")
         private Category category;
 
         @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
