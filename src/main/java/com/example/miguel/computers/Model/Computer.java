@@ -30,75 +30,75 @@ import java.util.List;
         private Category category;
 
         @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
+        @JsonIgnoreProperties({"computer", "client"})
+        public List<Message> messages;
+
+        @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
         @JsonIgnoreProperties({"computer", "messages"})
         public List<Reservation> reservations;
 
-        @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
-        @JsonIgnoreProperties({"cloud", "client"})
-        public List<Message> messages;
+            public Integer getId() {
+                return id;
+            }
 
-        public Integer getId() {
-            return id;
-        }
+            public void setId(Integer id) {
+                this.id = id;
+            }
 
-        public void setId(Integer id) {
-            this.id = id;
-        }
+            public String getName() {
+                return name;
+            }
 
-        public String getName() {
-            return name;
-        }
+            public void setName(String name) {
+                this.name = name;
+            }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+            public String getBrand() {
+                return brand;
+            }
 
-        public String getBrand() {
-            return brand;
-        }
+            public void setBrand(String brand) {
+                this.brand = brand;
+            }
 
-        public void setBrand(String brand) {
-            this.brand = brand;
-        }
+            public Integer getYear() {
+                return year;
+            }
 
-        public Integer getYear() {
-            return year;
-        }
+            public void setYear(Integer year) {
+                this.year = year;
+            }
 
-        public void setYear(Integer year) {
-            this.year = year;
-        }
+            public String getDescription() {
+                return description;
+            }
 
-        public String getDescription() {
-            return description;
-        }
+            public void setDescription(String description) {
+                this.description = description;
+            }
 
-        public void setDescription(String description) {
-            this.description = description;
-        }
+            public Category getCategory() {
+                return category;
+            }
 
-        public Category getCategory() {
-            return category;
-        }
+            public void setCategory(Category category) {
+                this.category = category;
+            }
 
-        public void setCategory(Category category) {
-            this.category = category;
-        }
+            public List<Message> getMessages() {
+                return messages;
+            }
 
-        public List<Reservation> getReservations() {
-            return reservations;
-        }
+            public void setMessages(List<Message> messages) {
+                this.messages = messages;
+            }
 
-        public void setReservations(List<Reservation> reservations) {
-            this.reservations = reservations;
-        }
+            public List<Reservation> getReservations() {
+                return reservations;
+            }
 
-        public List<Message> getMessages() {
-            return messages;
-        }
-
-        public void setMessages(List<Message> messages) {
-            this.messages = messages;
-        }
-    }
+            public void setReservations(List<Reservation> reservations) {
+                this.reservations = reservations;
+            }
+}
 

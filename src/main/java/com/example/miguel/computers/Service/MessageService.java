@@ -39,8 +39,8 @@ public class MessageService {
         if (message.getIdMessage() != null) {
             Optional<Message> messageEncontrado = getMessage(message.getIdMessage());
             if (!messageEncontrado.isEmpty()){
-                if (message.getMessagetext() != null) {
-                    messageEncontrado.get().setMessagetext(message.getMessagetext());
+                if (message.getMessageText() != null) {
+                    messageEncontrado.get().setMessageText(message.getMessageText());
                 }
                 return messageRepository.save(messageEncontrado.get());
             }
