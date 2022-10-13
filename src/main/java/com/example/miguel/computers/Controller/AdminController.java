@@ -4,6 +4,7 @@ package com.example.miguel.computers.Controller;
  */
 
 import com.example.miguel.computers.Model.Admin;
+import com.example.miguel.computers.Model.Score;
 import com.example.miguel.computers.Service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,5 +35,16 @@ public class AdminController {
         return adminService.save(admin);
     }
 
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Admin update(@RequestBody Admin admin) {
+        return adminService.update(admin);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int adminId) {
+        return adminService.delete(adminId);
+    }
 
 }

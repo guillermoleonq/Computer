@@ -1,6 +1,7 @@
 package com.example.miguel.computers.Controller;
 
 
+import com.example.miguel.computers.Model.Message;
 import com.example.miguel.computers.Model.Score;
 import com.example.miguel.computers.Service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,18 @@ public class ScoreController {
     @ResponseStatus(HttpStatus.CREATED)
     public Score save(@RequestBody Score score){
         return scoreService.save(score);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Score update(@RequestBody Score score) {
+        return scoreService.update(score);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int scoreId) {
+        return scoreService.delete(scoreId);
     }
 
 }

@@ -1,6 +1,7 @@
 
 package com.example.miguel.computers.Controller;
 
+
 import com.example.miguel.computers.Model.Client;
 import com.example.miguel.computers.Service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,4 +36,15 @@ public class ClientController {
         return clientService.save(client);
     }
 
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Client update(@RequestBody Client client) {
+        return clientService.update(client);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int clientId) {
+        return clientService.delete(clientId);
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.miguel.computers.Controller;
 
 
+import com.example.miguel.computers.Model.Client;
 import com.example.miguel.computers.Model.Computer;
 import com.example.miguel.computers.Service.ComputerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +35,17 @@ public class ComputerController {
     public Computer save(@RequestBody Computer computer){
         return computerService.save(computer);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Computer update(@RequestBody Computer computer) {
+        return computerService.update(computer);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int computerId) {
+        return computerService.delete(computerId);
+    }
+
 }

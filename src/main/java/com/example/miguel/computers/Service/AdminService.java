@@ -50,7 +50,7 @@ public class AdminService {
         }return admin;
     }
 
-    public boolean deleteAdmin(int adminId){
+    public boolean delete(int adminId){
         Boolean resultado = getById(adminId).map(adminPorEliminar ->{
         //Boolean resultado = getAdmin(Id).map(elemento ->{
             return true;

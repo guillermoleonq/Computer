@@ -1,6 +1,7 @@
 package com.example.miguel.computers.Controller;
 
 
+import com.example.miguel.computers.Model.Message;
 import com.example.miguel.computers.Model.Reservation;
 import com.example.miguel.computers.Service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,18 @@ public class ReservationController {
     public Reservation save(@RequestBody Reservation reservation){
         return reservationService.save(reservation);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reservation update(@RequestBody Reservation reservation) {
+        return reservationService.update(reservation);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int reservationId) {
+        return reservationService.delete(reservationId);
+    }
+
 
 }
