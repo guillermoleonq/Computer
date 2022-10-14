@@ -40,7 +40,7 @@ public class ClientService {
                     clientEncontrado.get().setName(client.getName());
                 }
                 if(client.getAge()!= null){
-                    clientEncontrado.get().setAge(client.getIdClient());
+                    clientEncontrado.get().setAge(client.getAge());
                 }
                 if(client.getPassword()!=null){
                     clientEncontrado.get().setPassword(client.getPassword());

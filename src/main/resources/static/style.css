@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.left-panel {
+    width: 20%;
+}
+
+.right-panel {
+    width: 80%;
+}
+
+form {
+    width: 25%;
+}
+
+form>div {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+
+}
+
+
+label {
+    width: 30%;
+}
+
+input { 
+    width: 70%;
+}
+
+button {
+    width: 100%;
+}
+
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th{
+    border: 1px solid black;
+    padding: 8px;
+}

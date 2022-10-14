@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="computers.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Computers</title>
+</head>
+
+<body>
+    <form class="left-panel">
+        <h2>Computadores</h2>
+        <div>
+            <label for="id">Id</label>
+            <input id="id" min="0" type="number">
+        </div>
+        <div>
+            <label for="brand">Marca</label>
+            <input id="brand" type="text">
+        </div>
+        <div>
+            <label for="model">Modelo</label>
+            <input id="model" min="1" type="number">
+        </div>
+        <div>
+            <label for="category_id">Categoria</label>
+            <input id="category_id" min="1" type="number">
+        </div>
+        <div>
+            <label for="name">Descripción</label>
+            <input id="name" type="text">
+        </div>
+        <div>
+            <button onclick= "Computers.loadAll()" type="button">Consultar</button>
+        </div>
+        <div>
+            <button onclick="Computers.insert()" type="button">Guardar</button>
+        </div>
+        <div>
+            <button onclick="Computers.update()" type="button">Actualizar</button>
+        </div>
+        <div>
+            <a href="index.html">REGRESAR AL MENU</a>
+        </div>
+    </form>
+
+
+
+</body>
+<tbody>
+<div>
+    <h2>Tabla de Computadores</h2>
+    <table class="right-panel">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Categoria</th>
+                <th>Descripcion</th>
+            </tr>
+        </thead>
+        <tbody><div></div>
+            <tr>
+                <td colspan="5">"Consultar" para ver Computadores</td>     
+            </tr>
+        </tbody>
+    </table>
+    <h2>Detalles del Computador</h2> 
+    <span id="details"></span>
+</div>  
+</tbody>
+
+</html>

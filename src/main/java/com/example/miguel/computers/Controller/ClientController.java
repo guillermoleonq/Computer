@@ -38,8 +38,8 @@ public class ClientController {
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Client update(@RequestBody Client client) {
-        return clientService.update(client);
+    public Client update(@RequestBody Client client)
+    {return clientService.update(client);
     }
 
     @DeleteMapping("/{id}")
