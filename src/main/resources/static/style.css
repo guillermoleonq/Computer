@@ -1,40 +1,48 @@
 body {
-    display: flex;
-    flex-direction: row;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.left-panel {
-    width: 20%;
+.login{
+    background: #008f99;
+    text-align: right;
+    color: aliceblue;
+    padding: 2px;
 }
 
-.right-panel {
-    width: 80%;
+.header{
+    text-align: center;
+    color: #000;
+    padding: 2px;
+    font-size: 30px;
 }
 
-form {
-    width: 25%;
-}
-
-form>div {
-    display: flex;
-    flex-direction: row;
-    margin: 5px;
+.menu{
 
 }
 
+.content{
 
-label {
-    width: 30%;
 }
 
-input { 
-    width: 70%;
+.button_menu{
+    line-height: 40px;
+    height: 40px;
+    padding: 0px 10px 0px 10px;
+    vertical-align: baseline;
+    width: auto;
+    color: #fff;
+    text-transform: none;
+    text-decoration: none;
+    text-align: left;
+    text-decoration: none;
+    background: rgb(0,143,153);
+    border: 0;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: normal;
+    outline: none;
 }
 
-button {
-    width: 100%;
-}
 
 
 table{

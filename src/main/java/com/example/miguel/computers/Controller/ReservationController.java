@@ -1,6 +1,8 @@
 package com.example.miguel.computers.Controller;
 
 
+import com.example.miguel.computers.Model.DTOs.CompletedAndCancelled;
+import com.example.miguel.computers.Model.DTOs.TotalAndClient;
 import com.example.miguel.computers.Model.Message;
 import com.example.miguel.computers.Model.Reservation;
 import com.example.miguel.computers.Service.ReservationService;
@@ -48,5 +50,20 @@ public class ReservationController {
         return reservationService.delete(reservationId);
     }
 
+    //Reto 5
+    @GetMapping("/report-dates/{fecha1}/{fecha2}")
+    public List<Reservation> getReservationsBetweenDatesReport(@PathVariable("fecha1") String fecha1, @PathVariable("fecha2") String fecha2){
+        return reservationService.getReservationsBetweenDatesReport(fecha1, fecha2);
+    }
+
+    @GetMapping("/report-status")
+    public CompletedAndCancelled getReservationStatusReport(){
+        return reservationService.getReservationStatusReport();
+    }
+
+    @GetMapping("/report-client")
+    public List<TotalAndClient> getTopClientsReport(){
+        return reservationService.getTopClientsReport();
+    }
 
 }

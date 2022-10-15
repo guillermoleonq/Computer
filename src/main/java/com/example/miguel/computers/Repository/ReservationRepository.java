@@ -1,11 +1,15 @@
 package com.example.miguel.computers.Repository;
 
 
+import com.example.miguel.computers.Model.Client;
+import com.example.miguel.computers.Model.DTOs.TotalAndClient;
 import com.example.miguel.computers.Model.Reservation;
 import com.example.miguel.computers.Repository.CrudRepository.ReservationCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,4 +31,28 @@ public class ReservationRepository {
     public void delete(Reservation reservation){
         reservationCrudRepository.delete(reservation);
     }
+
+    public List<Reservation> getReservationBetweenDAtes(Date fechaA, Date fechaB){
+        return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(fechaA, fechaB);
+    }
+
+    public List<Reservation> getReservationsByStatus(String status){
+        return reservationCrudRepository.findAllByStatus(status);
+    }
+
+    public List<TotalAndClient> getTopClients(){
+        List<TotalAndClient> respuesta = new ArrayList<>();
+        List<Object[]> reporte = reservationCrudRepository.getTotalReservationsByClient();
+
+        for (int i = 0; i < reporte.size(); i++) {
+            respuesta.add(new TotalAndClient((Long)reporte.get(i)[1], (Client)reporte.get(i)[0]));
+        }
+        return respuesta;
+    }
+
+
+
+
+
+
 }

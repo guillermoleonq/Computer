@@ -4,7 +4,6 @@ package com.example.miguel.computers.Controller;
  */
 
 import com.example.miguel.computers.Model.Admin;
-import com.example.miguel.computers.Model.Score;
 import com.example.miguel.computers.Service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
